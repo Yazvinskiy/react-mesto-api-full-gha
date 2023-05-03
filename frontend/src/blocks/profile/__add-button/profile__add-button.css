@@ -1,0 +1,20 @@
+.profile__add-button {
+    cursor: pointer;
+    min-width: 150px;
+    height: 50px;
+    background: url('../../../images/button-edd.svg') no-repeat center;
+    border: 2px solid #FFFFFF;
+    border-radius: 2px;
+}
+
+.profile__add-button:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 700px) {
+    .profile__add-button {
+        background: url('../../../images/button-edd-small.svg') no-repeat center;
+        margin-top: 30px;
+        min-width: 282px;
+    }
+}

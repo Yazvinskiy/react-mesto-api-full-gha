@@ -1,0 +1,19 @@
+.popup__input-auth {
+    border: none;
+    border-bottom: 2px solid #CCCCCC;
+    width: 100%;
+    background-color: black;  
+    margin-bottom: 27px;
+    box-sizing: border-box;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.94px;
+    height: 27px;
+    
+}
+
+
+.popup__input-auth:focus {
+    outline:none;
+}

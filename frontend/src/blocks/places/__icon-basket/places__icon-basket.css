@@ -1,0 +1,15 @@
+.places__icon-basket {
+    background: url('../../../images/button-basket.svg') no-repeat;
+    cursor: pointer;
+    border: none;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.places__icon-basket:hover {
+    opacity: 0.6;
+}

@@ -1,0 +1,14 @@
+.header__burger-menu {
+    color: white;
+    font-size: 27px;
+    padding-right: 30px;
+    cursor: pointer;
+    display: none;
+
+}
+
+@media screen and (max-width: 700px) {
+    .header__burger-menu {
+        display: block;
+    } 
+}

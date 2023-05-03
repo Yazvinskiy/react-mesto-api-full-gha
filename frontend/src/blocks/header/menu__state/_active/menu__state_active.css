@@ -1,0 +1,10 @@
+.menu__state_active {
+    display: none;
+}
+
+
+@media screen and (max-width: 700px) {
+    .menu__state_active {
+        display: flex;
+    }
+}

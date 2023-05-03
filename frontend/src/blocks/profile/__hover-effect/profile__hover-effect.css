@@ -1,0 +1,15 @@
+.profile__hover-effect {
+    position: relative;
+    cursor: pointer;
+    height: 120px;
+ 
+}
+
+.profile__hover-effect:hover .profile__edit-avatar-button {
+    opacity: 1;
+  }
+
+  .profile__hover-effect:hover .profile__overlay {
+    display: block;
+    background: rgba(0, 0, 0, 0.8);
+  }

@@ -1,0 +1,14 @@
+.places__icon-like {
+    background: url('../../../images/button-like.svg') no-repeat;
+    cursor: pointer;
+    border: none;
+    width: 22px;
+    height: 19px;
+    padding: 0;
+    flex-shrink: 0;
+
+}
+
+.places__icon-like:hover {
+    opacity: 0.6;
+}

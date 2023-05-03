@@ -1,0 +1,17 @@
+.popup__container-auth {
+    background: black;
+    width: 358px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+}
+
+@media screen and (max-width: 700px) {
+    .popup__container-auth {
+        max-width: 260px;
+        margin-top: 40px;
+
+    }
+}
