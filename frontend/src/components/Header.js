@@ -17,7 +17,7 @@ function Header({ userEmail, onSignOut, loggedIn }) {
           onClick={handleClick}
         >
           <p className="header__email">{userEmail}</p>
-          <Link to="/sign-in" className="header__link" onClick={onSignOut}>
+          <Link to="/signin" className="header__link" onClick={onSignOut}>
             Выйти
           </Link>
         </div>
@@ -38,17 +38,17 @@ function Header({ userEmail, onSignOut, loggedIn }) {
 
         <Routes>
           <Route
-            path="sign-up"
+            path="signup"
             element={
-              <Link to="/sign-in" className="header__link">
+              <Link to="/signin" className="header__link">
                 Войти
               </Link>
             }
           />
           <Route
-            path="sign-in"
+            path="signin"
             element={
-              <Link to="/sign-up" className="header__link">
+              <Link to="/signup" className="header__link">
                 {loggedIn ? '' : 'Регистрация'}
               </Link>
             }
@@ -57,7 +57,7 @@ function Header({ userEmail, onSignOut, loggedIn }) {
         {loggedIn && (
           <div className="header__link__container">
             <p className="header__email">{userEmail}</p>
-            <Link to="/sign-in" className="header__link" onClick={onSignOut}>
+            <Link to="/signin" className="header__link" onClick={onSignOut}>
            {userEmail ? 'Выйти' : 'Регистрация'}
             </Link>
           </div>

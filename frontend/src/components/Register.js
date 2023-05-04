@@ -73,7 +73,7 @@ const Register = ({ onSubmit, onLoading }) => {
       </form>
       <div className="signup-container">
         <p className="signup-container__text">Уже зарегистрированы?</p>
-        <Link to="/sign-in" className="signup-container__link">
+        <Link to="/signin" className="signup-container__link">
           Войти
         </Link>
       </div>

@@ -40,7 +40,7 @@ function App() {
       setLoggedIn(true);
       setInfoToolStatus(true);
       setIsInfoTooltipPopupOpen(true);
-      navigate('/sign-in');
+      navigate('/signin');
     } catch (error) {
       console.log(error);
       setInfoToolStatus(false);
@@ -65,7 +65,7 @@ function App() {
     localStorage.removeItem('token');
     setLoggedIn(false);
     setUserEmail('');
-    navigate('/sign-in');
+    navigate('/signin');
   };
 
   
@@ -242,11 +242,11 @@ function App() {
               }
             />
             <Route
-              path="/sign-up"
+              path="/signup"
               element={<Register onSubmit={handleSingUp} onLoading={handleLoading}/>}
             />
             <Route
-              path="/sign-in"
+              path="/signin"
               element={<Login onSubmit={handleSingIn} onLoading={handleLoading}/>}
             />
           </Routes>
