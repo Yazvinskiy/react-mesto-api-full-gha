@@ -88,9 +88,9 @@ export default class Api {
 }
 
 const apiConfig = {
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-58',
+  baseUrl: 'http://api.instamesto.nomoredomains.monster',
   headers: {
-    authorization: 'bc878a11-0bea-4fbc-ba4a-3af30d25199d',
+    authorization: `Bearer ${localStorage.getItem('jwt')}`,
     'Content-Type': 'application/json',
   },
 };

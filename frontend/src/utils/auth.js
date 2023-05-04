@@ -1,4 +1,4 @@
-const BASE_URL = 'https://auth.nomoreparties.co';
+const BASE_URL = 'http://api.instamesto.nomoredomains.monster';
 
 const getResponse = (res) => {
   if (!res.ok) {

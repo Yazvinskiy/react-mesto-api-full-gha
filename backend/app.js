@@ -1,11 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
-const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const app = express();
 const PORT = 3000;
 const router = require('./routes');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
+const cors = require('./middlewares/cors');
 
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb').then(() => {
   console.log('Connecting mongo');
@@ -14,15 +15,11 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb').then(() => {
 });
 
 app.use(express.json());
-
 app.use(requestLogger);
-
+app.use(cors);
 app.use('/', router);
-
 app.use(errorLogger);
-
 app.use(errors());
-
 app.use((err, req, res, next) => {
   const { statusCode = 500, message } = err;
   res.status(statusCode)
