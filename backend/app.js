@@ -2,12 +2,21 @@ const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
 require('dotenv').config();
+const cors = require('cors');
 
 const app = express();
 const PORT = 3000;
 const router = require('./routes');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-const cors = require('./middlewares/cors');
+
+app.use(
+  cors({
+    origin: ['http://instamesto.nomoredomains.monster',
+      'https://instamesto.nomoredomains.monster',
+      'https://localhost:3000',
+      'http://localhost:3000'],
+  }),
+);
 
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb').then(() => {
   console.log('Connecting mongo');
