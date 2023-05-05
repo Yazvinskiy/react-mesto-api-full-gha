@@ -9,12 +9,6 @@ const PORT = 3000;
 const router = require('./routes');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-app.use(
-  cors({
-    origin: '*',
-   }),
-);
-
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb').then(() => {
   console.log('Connecting mongo');
 }).catch((err) => {
@@ -23,7 +17,11 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb').then(() => {
 
 app.use(express.json());
 app.use(requestLogger);
-app.use(cors);
+app.use(
+  cors({
+    origin: '*',
+   }),
+);
 
 app.get('/crash-test', () => {
   setTimeout(() => {
