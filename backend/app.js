@@ -11,11 +11,8 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 app.use(
   cors({
-    origin: ['http://instamesto.nomoredomains.monster',
-      'https://instamesto.nomoredomains.monster',
-      'https://localhost:3000',
-      'http://localhost:3000'],
-  }),
+    origin: '*',
+   }),
 );
 
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb').then(() => {
