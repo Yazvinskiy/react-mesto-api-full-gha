@@ -3,6 +3,8 @@
 
   "rules": {
     "no-underscore-dangle": ["error", { "allow": ["_id", "__v", ] }]
-  }
+  },
 
+  "plugins": ["import"],
+  "import/no-extraneous-dependencies": ["error", {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}]
 }
