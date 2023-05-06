@@ -51,7 +51,7 @@ function App() {
   const handleSingIn = async (data) => {
     try {
       const jwt = await authorize(data);
-      localStorage.setItem('token', jwt.token);
+      localStorage.setItem('jwt', jwt.token);
       setLoggedIn(true);
       navigate('/');
     } catch (error) {
@@ -62,7 +62,7 @@ function App() {
   };
 
   const handleSignOut = () => {
-    localStorage.removeItem('token');
+    localStorage.removeItem('jwt');
     setLoggedIn(false);
     setUserEmail('');
     navigate('/signin');
@@ -70,10 +70,10 @@ function App() {
 
   
   useEffect(() => {
-    if (localStorage.getItem('token')) {
-      const jwt = localStorage.getItem('token');
-      checkToken(jwt).then((res) => {
-        setUserEmail(res.data.email);
+    if (localStorage.getItem('jwt')) {
+      const jwt = localStorage.getItem('jwt');
+      checkToken(jwt).then((data) => {
+        setUserEmail(data.email);
         setLoggedIn(true);
           navigate("/"); 
       })

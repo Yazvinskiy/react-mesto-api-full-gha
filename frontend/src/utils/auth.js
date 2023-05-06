@@ -1,4 +1,5 @@
-const BASE_URL =  'https://api.instamesto.nomoredomains.monster';
+// const BASE_URL =  'https://api.instamesto.nomoredomains.monster';
+const BASE_URL = 'http://localhost:3000'
 
 const getResponse = (res) => {
   if (!res.ok) {
