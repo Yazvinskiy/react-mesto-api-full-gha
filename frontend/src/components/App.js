@@ -101,9 +101,11 @@ function App() {
   };
 
   useEffect(() => {
-    getUserInfo();
-    getCards();
-  }, []);
+    if(loggedIn){
+      getUserInfo();
+      getCards();
+    }
+  }, [loggedIn]);
 
   const handleCardLike = async (card) => {
     // Снова проверяем, есть ли уже лайк на этой карточке
