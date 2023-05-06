@@ -88,8 +88,7 @@ export default class Api {
 }
 
 const apiConfig = {
-  // baseUrl: 'https://api.instamesto.nomoredomains.monster',
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'https://api.instamesto.nomoredomains.monster',
   headers: {
     authorization: `Bearer ${localStorage.getItem('jwt')}`,
     'Content-Type': 'application/json',
