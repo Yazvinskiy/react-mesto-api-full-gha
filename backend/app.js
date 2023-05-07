@@ -8,6 +8,7 @@ const app = express();
 const PORT = 3000;
 const router = require('./routes');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const centralErrorСontroller = require('./middlewares/centralErrorСontroller');
 
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb').then(() => {
   console.log('Connecting mongo');
@@ -20,7 +21,7 @@ app.use(requestLogger);
 app.use(
   cors({
     origin: '*',
-   }),
+  }),
 );
 
 app.get('/crash-test', () => {
@@ -34,16 +35,7 @@ app.use('/', router);
 app.use(errorLogger);
 app.use(errors());
 
-app.use((err, req, res, next) => {
-  const { statusCode = 500, message } = err;
-  res.status(statusCode)
-    .send({
-      message: statusCode === 500
-        ? 'На сервере произошла ошибка'
-        : message,
-    });
-  next();
-});
+app.use(centralErrorСontroller);
 
 app.listen(PORT, () => {
   console.log(`Listing on port ${PORT}`);

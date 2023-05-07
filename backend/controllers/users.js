@@ -27,11 +27,7 @@ const getUser = async (req, res, next) => {
       throw new NotFoundError('Пользователь по указанному id не найден');
     }
   } catch (err) {
-    if (err.name === 'CastError') {
-      next(new BadRequestError('Невалидный id'));
-    } else {
-      next(err);
-    }
+    next(err);
   }
 };
 
@@ -61,7 +57,7 @@ const createUser = (req, res, next) => {
     .then((hash) => User.create({
       name, about, avatar, email, password: hash,
     }))
-    .then((user) => res.send(user.toJSON()))
+    .then((user) => res.status(201).send(user.toJSON()))
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new BadRequestError('Переданы некорректные данные при создании пользователя'));
