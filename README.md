@@ -5,7 +5,7 @@
 
 ## Ссылки на проект
 
-IP 158.160.98.248
+IP - 158.160.98.248
 
 Frontend https://instamesto.nomoredomains.monster
 
