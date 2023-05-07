@@ -39,7 +39,7 @@ const deleteCard = async (req, res, next) => {
     if (card.owner.toHexString() !== req.user._id) {
       throw new ForbiddenError('Карточка с указанным id не является вашей');
     }
-    await Card.findByIdAndDelete(card);
+    await Card.deleteOne(card);
     res.send(card);
   } catch (err) {
     if (err.name === 'CastError') {
