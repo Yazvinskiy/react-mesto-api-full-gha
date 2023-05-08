@@ -40,11 +40,7 @@ const getUserInfo = async (req, res, next) => {
       throw new NotFoundError('Пользователь по указанному id не найден');
     }
   } catch (err) {
-    if (err.name === 'CastError') {
-      next(new BadRequestError('Невалидный id'));
-    } else {
-      next(err);
-    }
+    next(err);
   }
 };
 

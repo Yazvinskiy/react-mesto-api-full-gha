@@ -2,10 +2,6 @@ const mongoose = require('mongoose');
 const { isEmail, isURL } = require('validator');
 const bcrypt = require('bcryptjs');
 const UnauthorizedError = require('../errors/UnauthorizedError');
-// "Нужно добавить опцию, чтобы пароль не возвращался при запросах".
-// Прошу обратить Ваше внимание на то, что это поле не возвращается.
-// А если я добавляю метод select, то все приожение ломается
-// В самом низу есть метод , который удаляет пароль
 
 const userSchema = new mongoose.Schema({
   email: {
